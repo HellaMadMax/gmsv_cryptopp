@@ -1,6 +1,7 @@
-# Don't commit premake, the gmod module sdk or crypto files
+# Don't commit premake, the gmod module sdk, crypto, or hashlib2plus files
 /bin/
 /src/crypto/
+/src/hashlib2plus/
 
 # Don't commit temporary build files either
 /temp/

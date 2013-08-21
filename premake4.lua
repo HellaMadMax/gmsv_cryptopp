@@ -23,8 +23,15 @@ solution ( "TempProjectFile" )
 	
 	project ( "cryptopp" )
 		targetname ( "cryptopp" )
-		includedirs { "src", "src/crypto" }
-		files { "src/crypto/*.*", "src/main.cpp" }
+		includedirs { "src" }
+		if os.is( "windows" ) then
+			includedirs { "src/crypto" }
+			files { "src/crypto/*.*" }
+		else
+			includedirs { "src/hashlib2plus" }
+			files { "src/hashlib2plus/*.*" }
+		end
+		files { "src/main.cpp" }
 		location ( "temp" )
 		targetdir ( "build" )
 		if os.is( "windows" ) then
