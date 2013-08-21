@@ -1,6 +1,5 @@
 local path_gmodds = "E:\\Steam\\SteamApps\\common\\GarrysModDS\\garrysmod\\lua\\bin"
 local sdkpath_gmod = "bin/GmodSDK"
-local sdkpath_source = "bin/SourceSDK/mp/src"
 solution ( "TempProjectFile" )
 	language ( "C++" )
 	kind "SharedLib"
@@ -30,7 +29,9 @@ solution ( "TempProjectFile" )
 		targetdir ( "build" )
 		if os.is( "windows" ) then
 			targetsuffix ( "_win32" )
-			postbuildcommands { "mkdir "..path_gmodds, "copy "..string.gsub(path.getabsolute("build/"),"/","\\").."\\gmsv_cryptopp_win32.dll "..path_gmodds }
+			if path_gmodds then
+				postbuildcommands { "mkdir "..path_gmodds, "copy "..string.gsub(path.getabsolute("build/"),"/","\\").."\\gmsv_cryptopp_win32.dll "..path_gmodds }
+			end
 		else
 			targetsuffix ( "_linux" )
 		end
