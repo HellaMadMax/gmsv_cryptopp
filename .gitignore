@@ -2,6 +2,6 @@
 /bin/
 /src/crypto/
 
-# Don't include temporary build files
+# Don't commit temporary build files either
 /temp/
 TempProjectFile.sln
