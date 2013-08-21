@@ -1,0 +1,7 @@
+# Don't commit premake, the gmod module sdk or crypto files
+/bin/
+/src/crypto/
+
+# Don't include temporary build files
+/temp/
+TempProjectFile.sln
