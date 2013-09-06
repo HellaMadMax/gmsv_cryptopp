@@ -6,3 +6,4 @@
 # Don't commit temporary build files either
 /temp/
 TempProjectFile.sln
+Makefile
